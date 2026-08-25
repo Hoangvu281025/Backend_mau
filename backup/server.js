@@ -25,12 +25,7 @@ app.use('/mau/api/users', userRoutes);
 app.use('/mau/api/banners', bannerRoutes);
 
 
-// Chỉ chạy app.listen khi test ở máy local (không chạy trên Vercel)
-if (process.env.NODE_ENV !== 'production') {
-  const PORT = process.env.PORT || 5000;
-  app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-  });
-}
+app.listen(process.env.PORT, () => {
+    console.log(`Server is running on port ${process.env.PORT}`);
+});
 
-export default app;
